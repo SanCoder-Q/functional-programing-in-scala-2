@@ -4,5 +4,7 @@ lazy val webUI = root.in(file("web-ui"))
           unmanagedSourceDirectories in Compile +=
             (scalaSource in (calculator, Compile)).value / "calculator",
           libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "0.8.0",
-          persistLauncher := true
+          persistLauncher := true,
+          coverageEnabled := false,
+          coverageExcludedPackages := ".*"
       )
